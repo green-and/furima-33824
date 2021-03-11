@@ -47,7 +47,7 @@
 - belongs_to :item
 - has_one :address
 
-## Addressesテープル
+## addressesテープル
 | Column | Type | Options |
 | --------------- | ------- | ----------- |
 | postcode | string | null: false |
