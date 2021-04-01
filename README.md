@@ -51,11 +51,12 @@
 | Column | Type | Options |
 | --------------- | ------- | ----------- |
 | postcode | string | null: false |
-| prefecture_id | integer | null: false |
+| sender_area_id | integer | null: false |
 | municipality | string | null: false |
 | address | string | null: false |
 | building_name | string |  |
 | phone_number | string | null: false |
 | purchase | references | null: false, foreign_key: true |
+- sender_area_idは都道府県のモデルがすでにItemモデルにあるためそのidを使用
 ### Association
 - belongs_to :purchase
