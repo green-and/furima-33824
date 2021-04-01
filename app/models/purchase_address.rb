@@ -7,7 +7,7 @@ class PurchaseAddress
     validates :user_id
     validates :item_id
     validates :postcode
-    validates :sender_area_id
+    validates :sender_area_id, numericality: { other_than: 1 }
     validates :municipality
     validates :address
     validates :phone_number
