@@ -1,4 +1,4 @@
-class SenderArea < ActiveHash::Base
+class Prefecture < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '北海道' },
@@ -51,5 +51,5 @@ class SenderArea < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :items
+  has_many :addresses
 end
