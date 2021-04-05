@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
   def create
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
+      pay_item
       @purchase_address.save
       redirect_to root_path
     else
@@ -35,5 +36,14 @@ class PurchasesController < ApplicationController
     if Purchase.exists?(@item.id)
       redirect_to root_path
     end
+  end
+
+  def pay_item
+    Payjp.api_key = "sk_test_************"
+    Payjp::Charge.create(
+      amount: 1000, #金額は仮の数字
+      card: purchase_params[:token],
+      currency: 'jpy'
+    )
   end
 end
